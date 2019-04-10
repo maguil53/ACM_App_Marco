@@ -1,4 +1,4 @@
-package com.bignerdranch.android.demoapp.models.mlh;
+package com.bignerdranch.android.demoapp.model.mlh;
 
 public class Event {
 

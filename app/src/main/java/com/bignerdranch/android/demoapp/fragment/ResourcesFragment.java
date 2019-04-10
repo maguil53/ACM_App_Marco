@@ -2,13 +2,16 @@ package com.bignerdranch.android.demoapp.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bignerdranch.android.demoapp.R;
-import com.bignerdranch.android.demoapp.models.mlh.Event;
+import com.bignerdranch.android.demoapp.RecyclerHackathons;
+import com.bignerdranch.android.demoapp.model.mlh.Event;
 import com.bignerdranch.android.demoapp.retrofit.APIClient;
 import com.bignerdranch.android.demoapp.retrofit.MLHInterface;
 
@@ -21,7 +24,8 @@ import retrofit2.Response;
 
 public class ResourcesFragment extends Fragment {
 
-    TextView results;
+    private RecyclerView recyclerView;
+    private RecyclerHackathons recyclerAdapter;
     List<Event> hackathons;
 
     @Override
@@ -31,8 +35,8 @@ public class ResourcesFragment extends Fragment {
         //We must know what activity we are on.
         View rootView = inflater.inflate(R.layout.fragment_resources, container, false);
 
-        //Find the results TextView in our XML through Id
-        results = rootView.findViewById(R.id.results);
+        recyclerView = rootView.findViewById(R.id.hackathons_recycler);
+
 
         //LoadJSON is a custom method, we take in the parameter container since this is a fragment.
         LoadJson(container);
@@ -50,16 +54,12 @@ public class ResourcesFragment extends Fragment {
             @Override
             public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
                 hackathons = filterEvents(response.body());
-                for (Event event : hackathons) {
-                    String content = "";
-                    content += "Name: " + event.getName() + "\n";
-                    content += "Location: " + event.getLocation() + "\n";
-                    content += "Start Date: " + event.getStartDate() + "\n";
-                    content += "End Date: " + event.getEndDate() + "\n";
-                    content += "URL: " + event.getUrl() + "\n\n";
 
-                    results.append(content);
-                }
+                recyclerAdapter = new RecyclerHackathons(hackathons, container.getContext());
+                recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext()));
+                recyclerView.setAdapter(recyclerAdapter);
+                recyclerAdapter.notifyDataSetChanged();
+
             }
 
             @Override

@@ -1,6 +1,6 @@
 package com.bignerdranch.android.demoapp.retrofit;
 
-import com.bignerdranch.android.demoapp.models.mlh.Event;
+import com.bignerdranch.android.demoapp.model.mlh.Event;
 
 import java.util.List;
 
