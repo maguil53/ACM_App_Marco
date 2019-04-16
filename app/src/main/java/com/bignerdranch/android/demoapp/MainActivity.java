@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.bignerdranch.android.demoapp.fragment.AnnouncementFragment;
 import com.bignerdranch.android.demoapp.fragment.ResourcesFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -79,6 +80,11 @@ public class MainActivity extends AppCompatActivity
 
             // Handle the camera action
         } else if (id == R.id.nav_announcements) {
+            AnnouncementFragment announcementFragment = new AnnouncementFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, announcementFragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_resources) {
             ResourcesFragment resourcesFragment = new ResourcesFragment();
