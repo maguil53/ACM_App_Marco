@@ -9,4 +9,33 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="about_us_who_header">Who Are We?</string>
+    
+    <string name="about_us_what_header">What Is Our Mission?</string>
+
+    <string name="about_us_who_info">
+        The Association for Computing Machinery is an international scientific and
+         educational organization dedicated to advancing the art, science, engineering,
+         and application of information technology. The ACM Student Chapter at Cal State
+         LA is among the 430 operating student chapters dedicated to the ideals of the
+         national ACM. Our goals are achieved by weekly general meetings, tutoring,
+         member-led workshops, presentations from industry representatives and special
+         events.</string>
+
+    <string name="about_us_what_info_rule1">
+        1. To be organized and operated exclusively for educational and scientific purposes to promote:
+    </string>
+    
+    <string name="about_us_what_info_rule1sub">
+        -An increased knowledge of and greater interest in the science, design,
+            development, construction, languages, management and applications of
+            modern computing.
+    </string>
+    <string name="about_us_what_info_rule2">
+        2. To serve students at Cal State L.A. and other interested persons in the Los Angeles community.
+    </string>
+
+
+
 </resources>
