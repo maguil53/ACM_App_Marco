@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+    <!--
+        NestedScrollView is just like ScrollView,
+        but it supports acting as both a nested scrolling parent
+        and child on both new and old versions of Android.
+
+        Reason why I'm using NestedScrollView is because I want a
+        horizontal recyclerView for my "Leaders" section.
+     -->
+<android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/aboutUsBackgroundColor">
 
-    <TableLayout
+    <LinearLayout
+        android:background="@color/aboutUsBackgroundColor"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:stretchColumns="1">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/about_acm_logo"
@@ -58,7 +67,21 @@
             android:layout_height="wrap_content"
             android:text="@string/about_us_what_info_rule2" />
 
+        <!--
+            Not sure if this needs WRAP_CONTENT or MATCH_PARENT.
+            You should test out both though.
+        -->
 
-    </TableLayout>
 
-</ScrollView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/leaders_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

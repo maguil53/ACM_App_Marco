@@ -10,8 +10,10 @@ import android.view.ViewGroup;
 
 
 
+
 /**
- * A simple {@link Fragment} subclass.
+ *  Delete This Fragment later.
+ *  Use AboutUsFragment under fragment directory instead.
  */
 public class AboutFragment extends Fragment {
 

@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.bignerdranch.android.demoapp.fragment.AboutUsFragment;
 import com.bignerdranch.android.demoapp.fragment.AnnouncementFragment;
 import com.bignerdranch.android.demoapp.fragment.ResourcesFragment;
 
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_about) {
-            AboutFragment aboutFragment = new AboutFragment();
+            AboutUsFragment aboutFragment = new AboutUsFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, aboutFragment);

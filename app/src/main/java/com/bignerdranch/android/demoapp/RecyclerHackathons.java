@@ -53,6 +53,7 @@ public class RecyclerHackathons extends RecyclerView.Adapter<RecyclerHackathons.
         //Here, we bind the information with the view itself.
         void bind(final int position){
 
+
             Picasso.with(mContext).load(mHackathons.get(position)
             .getImageUrl()).into(mEventImage);
 

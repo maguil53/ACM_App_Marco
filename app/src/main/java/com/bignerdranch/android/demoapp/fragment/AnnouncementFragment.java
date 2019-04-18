@@ -50,6 +50,7 @@ public class AnnouncementFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_announcements, container, false);
         recyclerView = rootView.findViewById(R.id.announcements_recycler);
+
         mAnnouncementAdapter = new RecyclerAnnouncements(mAnnouncements,container.getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext()));
         recyclerView.setAdapter(mAnnouncementAdapter);
