@@ -41,6 +41,8 @@ public class ResourcesFragment extends Fragment {
         //LoadJSON is a custom method, we take in the parameter container since this is a fragment.
         LoadJson(container);
 
+        getActivity().setTitle("Resources");
+
         return rootView;
     }
 

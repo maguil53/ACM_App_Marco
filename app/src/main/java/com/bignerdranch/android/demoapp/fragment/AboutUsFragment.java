@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +28,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AboutUsFragment extends Fragment {
+
+    private final String TAG = "AboutUsFragment";
 
     //Instance of Firebasedatabase
     final private FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -58,6 +63,12 @@ public class AboutUsFragment extends Fragment {
         mAdapter = new AboutRecylerAdapter(mACMLeaders, getActivity());
         recyclerView.setAdapter(mAdapter);
         recyclerView.setNestedScrollingEnabled(false);
+
+        // This is used to swipe one item at a time for your RecyclerView
+        SnapHelper snapHelper = new PagerSnapHelper();
+        snapHelper.attachToRecyclerView(recyclerView);
+
+
 
 
         getActivity().setTitle("About Us");
@@ -107,6 +118,12 @@ public class AboutUsFragment extends Fragment {
                 //Do Nothing
             }
         });
+    }
+
+    // Gets current item of ReyclerView using it's LayoutManager
+    private int getCurrentItem() {
+        return ((LinearLayoutManager) recyclerView.getLayoutManager())
+                .findFirstVisibleItemPosition();
     }
 
 }
