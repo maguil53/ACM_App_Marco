@@ -72,6 +72,21 @@
             You should test out both though.
         -->
 
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="137dp"
+            android:textSize="40sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#847500"
+            android:text="Leaders"/>
+
+        <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="80dp"
+              android:orientation="vertical"
+              android:background="@drawable/about_gradient">
+        </LinearLayout>
 
 
         <android.support.v7.widget.RecyclerView
