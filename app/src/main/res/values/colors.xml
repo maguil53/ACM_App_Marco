@@ -9,5 +9,10 @@
     <color name="aboutUsBackgroundColor">#000000</color>
     <color name="whiteTextColor">#ffffff</color>
 
+    <color name="lightGrey">#D1D1D1</color>
+    <color name="darkGrey">#a0a0a0</color>
+    <color name="darkerGrey">#767676</color>
+
+
     <color name="gold">#847500</color>
 </resources>

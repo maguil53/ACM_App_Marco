@@ -3,6 +3,7 @@ package com.bignerdranch.android.demoapp;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -36,6 +37,12 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+
+        // Sets the background color for the Side Navigation
+        // Apparently, "getResources().getColor()" is deprecated. So, we use ContextCompat
+        navigationView.setBackgroundColor(ContextCompat.getColor(this, R.color.darkGrey));
+
         navigationView.setNavigationItemSelectedListener(this);
     }
 
