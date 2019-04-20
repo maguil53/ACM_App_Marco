@@ -25,7 +25,7 @@
             android:layout_marginTop="20dp"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/official_acm_logo"/>
+            android:src="@mipmap/official_acm_logo"/>
 
         <TextView
             style="@style/AppTheme.AboutUsHeader"

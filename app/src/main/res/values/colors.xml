@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="textColorPrimary">#000000</color>
+    <color name="black">#000000</color>
 
     <color name="aboutUsBackgroundColor">#000000</color>
     <color name="whiteTextColor">#ffffff</color>

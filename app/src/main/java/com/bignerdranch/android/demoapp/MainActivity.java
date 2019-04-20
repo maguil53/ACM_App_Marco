@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity
 
         // Sets the background color for the Side Navigation
         // Apparently, "getResources().getColor()" is deprecated. So, we use ContextCompat
-        navigationView.setBackgroundColor(ContextCompat.getColor(this, R.color.darkGrey));
+        navigationView.setBackgroundColor(ContextCompat.getColor(this, R.color.black));
+
 
         navigationView.setNavigationItemSelectedListener(this);
     }

@@ -14,12 +14,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <!--"@drawable/drawer_item_color" is used to change color of selected
+        item for the side navigaiton
+    -->
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:itemTextColor="@drawable/drawer_item_color"
+        app:itemIconTint="@drawable/drawer_item_color"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"/>
 
