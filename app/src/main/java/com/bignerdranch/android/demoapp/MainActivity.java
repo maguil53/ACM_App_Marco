@@ -16,6 +16,7 @@ import android.view.MenuItem;
 
 import com.bignerdranch.android.demoapp.fragment.AboutUsFragment;
 import com.bignerdranch.android.demoapp.fragment.AnnouncementFragment;
+import com.bignerdranch.android.demoapp.fragment.HomeFragment;
 import com.bignerdranch.android.demoapp.fragment.ResourcesFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -45,6 +46,12 @@ public class MainActivity extends AppCompatActivity
 
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        HomeFragment homeFragment = new HomeFragment();
+        android.support.v4.app.FragmentTransaction fragmentTransaction =
+                getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.fragment_container, homeFragment);
+        fragmentTransaction.commit();
     }
 
     @Override
@@ -86,7 +93,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-
+            HomeFragment homeFragment = new HomeFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, homeFragment);
+            fragmentTransaction.commit();
             // Handle the camera action
         } else if (id == R.id.nav_announcements) {
             AnnouncementFragment announcementFragment = new AnnouncementFragment();

@@ -7,16 +7,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bignerdranch.android.demoapp.AboutRecylerAdapter;
+import com.bignerdranch.android.demoapp.AboutRecyclerAdapter;
 import com.bignerdranch.android.demoapp.R;
-import com.bignerdranch.android.demoapp.RecyclerAnnouncements;
 import com.bignerdranch.android.demoapp.model.ACMLeader;
-import com.bignerdranch.android.demoapp.model.announcements.Announcement;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,7 +34,7 @@ public class AboutUsFragment extends Fragment {
     private DatabaseReference mDatabaseReference;
 
     private RecyclerView recyclerView;
-    private AboutRecylerAdapter mAdapter;
+    private AboutRecyclerAdapter mAdapter;
 
     // Need to create Model "ACMLeaders"
      private List<ACMLeader> mACMLeaders;
@@ -60,7 +57,7 @@ public class AboutUsFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
         // Activity extends from "context". Thus, Activity IS a Context.
-        mAdapter = new AboutRecylerAdapter(mACMLeaders, getActivity());
+        mAdapter = new AboutRecyclerAdapter(mACMLeaders, getActivity());
         recyclerView.setAdapter(mAdapter);
         recyclerView.setNestedScrollingEnabled(false);
 
