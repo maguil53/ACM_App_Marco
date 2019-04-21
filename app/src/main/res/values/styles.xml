@@ -44,6 +44,11 @@
         <item name="android:paddingLeft">5dp</item>
     </style>
 
+    <style name="AppTheme.ArticleCard">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 

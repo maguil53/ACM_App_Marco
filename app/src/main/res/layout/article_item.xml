@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+<android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardBackgroundColor="#000000">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/article_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:text="HELLOOOO!"
+            android:layout_marginStart="3dp"
+            android:layout_marginBottom="2dp"
+            android:textColor="#ffffff"/>
+
+        <ImageView
+            android:id="@+id/article_image_url"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:padding="3dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_android_green_24dp"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/darkGrey"/>
+
+                <TextView
+                    style="@style/AppTheme.ArticleCard"
+                    android:id="@+id/article_author"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="33sp"
+                    android:text="Test Title"/>
+
+                <ImageView
+                    android:id="@+id/linkedin"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@mipmap/linkedin"/>
+
+                <ImageView
+                    android:id="@+id/github"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:src="@mipmap/octocat"/>
+
+            </LinearLayout>
+
+            
+            <TextView
+                style="@style/AppTheme.ArticleCard"
+                android:id="@+id/article_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Body"
+                android:textSize="15dp"
+                android:padding="10dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/AppTheme.ArticleCard"
+                    android:id="@+id/article_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="01-15-2018"
+                    android:paddingRight="10dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/darkGrey"/>
+
+</LinearLayout>
+
