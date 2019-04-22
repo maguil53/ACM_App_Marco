@@ -2,6 +2,8 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -29,6 +31,7 @@
             android:layout_marginBottom="2dp"
             android:textColor="#ffffff"/>
 
+
         <ImageView
             android:id="@+id/article_image_url"
             android:scaleType="centerCrop"
@@ -42,11 +45,17 @@
             android:paddingStart="3dp"
             android:paddingEnd="3dp">
 
-            <LinearLayout
+
+            <!--This is used so your items wrap if there's not enough room-->
+            <com.google.android.flexbox.FlexboxLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                app:flexWrap="wrap"
+                app:alignItems="stretch"
+                app:alignContent="stretch" >
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -54,17 +63,18 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/ic_android_green_24dp"
-                    app:civ_border_width="1dp"
+                    app:civ_border_width="0.5dp"
                     app:civ_border_color="@color/darkGrey"/>
 
                 <TextView
                     style="@style/AppTheme.ArticleCard"
                     android:id="@+id/article_author"
+                    android:maxLines="2"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="5dp"
                     android:textSize="33sp"
                     android:text="Test Title"/>
 
@@ -72,7 +82,7 @@
                     android:id="@+id/linkedin"
                     android:layout_marginStart="1dp"
                     android:layout_marginEnd="1dp"
-                    android:layout_marginTop="17dp"
+                    android:layout_marginTop="15dp"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
                     android:src="@mipmap/linkedin"/>
@@ -81,36 +91,65 @@
                     android:id="@+id/github"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="13dp"
                     android:layout_width="33dp"
                     android:layout_height="33dp"
                     android:src="@mipmap/octocat"/>
 
-            </LinearLayout>
+            </com.google.android.flexbox.FlexboxLayout>
 
-            
+
             <TextView
                 style="@style/AppTheme.ArticleCard"
-                android:id="@+id/article_description"
+                android:textColor="@color/lightGrey"
+                android:id="@+id/article_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Body"
-                android:textSize="15dp"
-                android:padding="10dp"/>
+                android:text="01-15-2018"
+                android:layout_marginTop="-5dp"
+                android:layout_marginStart="63dp"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:orientation="horizontal">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@color/lightGrey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/article_description"
+                    />
+
                 <TextView
+                    android:id="@+id/article_description"
                     style="@style/AppTheme.ArticleCard"
-                    android:id="@+id/article_date"
-                    android:layout_width="match_parent"
+                    android:layout_width="361dp"
                     android:layout_height="wrap_content"
-                    android:text="01-15-2018"
-                    android:paddingRight="10dp"/>
-            </LinearLayout>
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="10dp"
+                    android:text="Body"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="-6dp"
+                android:layout_marginStart="16dp"
+                android:background="@color/lightGrey"/>
+
+
+
+
         </LinearLayout>
 
 
