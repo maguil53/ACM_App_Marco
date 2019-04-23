@@ -54,7 +54,7 @@ public class RecyclerAnnouncements extends RecyclerView.Adapter<RecyclerAnnounce
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder{
         //These are the variables for each view.
-        ImageView mAnnouncementImage;
+        ImageView mAnnouncementProfile;
         TextView mAnnouncementTitle;
         TextView mAnnouncementDate;
         TextView mAnnouncementBody;
@@ -64,7 +64,7 @@ public class RecyclerAnnouncements extends RecyclerView.Adapter<RecyclerAnnounce
         //Since findViewById returns a view, we must type-cast it to match each type of the variables above.
         public RecyclerViewHolder(View itemView){
             super(itemView);
-            mAnnouncementImage = (ImageView) itemView.findViewById(R.id.announcement_image_url);
+            mAnnouncementProfile = (ImageView) itemView.findViewById(R.id.announcement_profile);
             mAnnouncementTitle = (TextView) itemView.findViewById(R.id.announcement_title);
             mAnnouncementDate = (TextView) itemView.findViewById(R.id.announcement_date);
             mAnnouncementBody = (TextView) itemView.findViewById(R.id.announcement_body);
@@ -73,7 +73,7 @@ public class RecyclerAnnouncements extends RecyclerView.Adapter<RecyclerAnnounce
 
         //Here, we bind the information with the view itself.
         void bind(final int position){
-            Picasso.with(mContext).load(announcements.get(position).getImageUrl()).into(mAnnouncementImage);
+            Picasso.with(mContext).load(announcements.get(position).getProfileImg()).into(mAnnouncementProfile);
             mAnnouncementTitle.setText(announcements.get(position).getTitle());
             mAnnouncementDate.setText(announcements.get(position).getDate());
             mAnnouncementBody.setText(announcements.get(position).getBody());

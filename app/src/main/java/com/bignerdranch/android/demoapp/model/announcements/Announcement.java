@@ -1,11 +1,12 @@
 package com.bignerdranch.android.demoapp.model.announcements;
 
 public class Announcement {
+
     private String title;
     private String author;
     private String body;
     private String date;
-    private String imageUrl;
+    private String profileImg;
 
     //Default Constructor
     public Announcement (){}
@@ -42,11 +43,11 @@ public class Announcement {
         this.date = date;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getProfileImg() {
+        return profileImg;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setProfileImg(String profileImg) {
+        this.profileImg = profileImg;
     }
 }
